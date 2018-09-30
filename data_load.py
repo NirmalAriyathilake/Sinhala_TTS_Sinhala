@@ -22,7 +22,7 @@ def load_vocab():
     return char2idx, idx2char
 
 def text_normalize(text):
-    text = ''.join(char for char in unicodedata.normalize('NFC', text)
+    text = ''.join(char for char in unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore')
                            if unicodedata.category(char) != 'Mn') # Strip accents
 
     text = text.lower()
@@ -54,7 +54,7 @@ def load_data(mode="train"):
                 print(text)
                 text = text_normalize(text) + "E"  # E: EOS
                 print(text)
-                text = "{}".format(text.decode('utf-8'))
+                text = "{}".format(text.encode('utf-8'))
                 print(text)
                 text = [char2idx[char] for char in text]
                 print(len(text))
