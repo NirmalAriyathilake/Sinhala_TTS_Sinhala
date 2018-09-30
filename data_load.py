@@ -22,7 +22,7 @@ def load_vocab():
     return char2idx, idx2char
 
 def text_normalize(text):
-    text = ''.join(char for char in unicodedata.normalize('NFKD', text)
+    text = ''.join(char for char in unicodedata.normalize('NFD', text)
                         ) # Strip accents
 
     text = text.lower()
