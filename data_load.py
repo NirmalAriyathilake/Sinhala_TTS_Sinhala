@@ -51,6 +51,7 @@ def load_data(mode="train"):
                 fpaths.append(fpath)
                 # text = "{}".format(text.encode('utf-8'))
                 text = text.encode("utf-8")
+                text = unicode(text, "utf-8")
                 print(text)
                 text = text_normalize(text) + "E"  # E: EOS
                 print(text)
