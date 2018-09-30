@@ -50,7 +50,7 @@ def load_data(mode="train"):
                 fpath = os.path.join(hp.data, "wavs", fname + ".wav")
                 fpaths.append(fpath)
                 # text = "{}".format(text.encode('utf-8'))
-                text = text.decode("utf-8")
+                text = text.encode("utf-8")
                 print(text)
                 text = text_normalize(text) + "E"  # E: EOS
                 print(text)
