@@ -52,9 +52,9 @@ def load_data(mode="train"):
                 # text = "{}".format(text.encode('utf-8'))
                 # text = text.decode("utf-8")
                 print(text)
-                # text = text_normalize(text) + "E"  # E: EOS
+                text = text_normalize(text) + "E"  # E: EOS
                 # print(text)
-                # text = "{}".format(text.encode('utf-8'))
+                text = "{}".format(text.decode('utf-8'))
                 # print(text)
                 text = [char2idx[char] for char in text]
                 print(len(text))
