@@ -49,11 +49,11 @@ def load_data(mode="train"):
 
                 fpath = os.path.join(hp.data, "wavs", fname + ".wav")
                 fpaths.append(fpath)
-                print("TEXT : " + str(text))
+                print(text)
                 text = text_normalize(text) + "E"  # E: EOS
-                print("TEXT NORMALIZE : " + str(text))
+                print(text)
                 text = [char2idx[char] for char in text]
-                print("TEXT NORMALIZE Len : " + str(len(text)))
+                print(len(text))
                 text_lengths.append(len(text))
                 texts.append(np.array(text, np.int32).tostring())
 
